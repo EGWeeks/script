@@ -4,7 +4,6 @@ function userInput() {
 	electric(userValue);
 }
 
-
 function electric(kwhUsed){
 	// fixed charge per month
 	var fixedChargePerMonth = 5.37;
@@ -18,6 +17,7 @@ function electric(kwhUsed){
 	var overOne;
 	var billCost;
 	var overFive;
+	var roundedCost;
 
 	if ((month === 5) || (month === 6) || (month === 7)) {
 		firstFiveCost = 0.0894;
@@ -42,8 +42,10 @@ function electric(kwhUsed){
 	}
 
 	billCost += fixedChargePerMonth;
+	
+	roundedCost = Math.round(billCost*100)/100;
 
-	document.write("$"+ billCost);
+	document.write("$"+ roundedCost);
 }
 
 
