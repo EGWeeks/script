@@ -1,6 +1,11 @@
-function electric(){
 
-	var kwhUsed = prompt("kiloWatt-hour. (kWh)");
+function userInput() {
+	var userValue = document.getElementById('kwh').value
+	electric(userValue);
+}
+
+
+function electric(kwhUsed){
 	// fixed charge per month
 	var fixedChargePerMonth = 5.37;
 	// current month getMonth is from 0 - 11
@@ -37,7 +42,9 @@ function electric(){
 	}
 
 	billCost += fixedChargePerMonth;
-	document.write("$"+billCost);
+
+	document.write("$"+ billCost);
 }
+
 
 
